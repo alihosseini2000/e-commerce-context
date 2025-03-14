@@ -34,11 +34,11 @@ const ProductSinglePage: React.FC<IProductProps> = async ({ params }) => {
             height={500}
             className="w-full md:w-1/2 h-auto object-cover rounded"
           />
-          <div>
+          <div className='flex flex-col gap-4'>
             <h2 className="text-2xl font-bold">{product.title}</h2>
             <p className="text-gray-600">{product.description}</p>
             <p className="text-lg font-bold text-blue-600">${product.price}</p>
-            <p className="text-gray-800 bg-gray-400 px-4 py-2 rounded font-semibold">{product.category.name}</p>
+            <p className="text-gray-800 bg-gray-400 px-4 py-2 rounded font-semibold max-w-max">{product.category.name}</p>
             <AddToCart id={Number(id)} />
           </div>
         </div>
