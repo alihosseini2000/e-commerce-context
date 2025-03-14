@@ -8,7 +8,7 @@ import React from 'react'
 function Navbar() {
 
     const pathName = usePathname()
-const {cartTotalQty} = useShoppingCartContext()
+    const { cartTotalQty } = useShoppingCartContext()
     return (
         <nav className='py-4 shadow'>
             <div className='container mx-auto'>
@@ -22,7 +22,7 @@ const {cartTotalQty} = useShoppingCartContext()
                     }
                     <div>
                         <span className='bg-red-700 text-white rounded-full p-2 me-1'>{cartTotalQty}</span>
-                        <Link href='/cart'>Cart</Link>
+                        <Link href='/cart' className={`${pathName === '/cart' ? "text-sky-600" : ""}`}>Cart</Link>
                     </div>
                 </ul>
             </div>
