@@ -8,9 +8,6 @@ const Cart: React.FC = () => {
 
   const { cartItems } = useShoppingCartContext()
 
-  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.qty, 0);
-  const profit = totalPrice;  // For simplicity, assuming profit equals total price
-  const finalPrice = discountCode ? totalPrice * 0.9 : totalPrice;  // 10% discount if code is applied
 
   const handleDiscountChange = (e: React.ChangeEvent<HTMLInputElement>) => setDiscountCode(e.target.value);
 
@@ -23,9 +20,9 @@ const Cart: React.FC = () => {
         ))}
       </div>
       <div className='shadow-md border p-4 mt-5'>
-        <h3>Total Price: <span>${totalPrice}</span></h3>
-        <h3>Your Profit: <span>${profit}</span></h3>
-        <h3>Final Price: <span>${finalPrice}</span></h3>
+        <h3>Total Price: <span>$totalPrice</span></h3>
+        <h3>Your Profit: <span>$profit</span></h3>
+        <h3>Final Price: <span>$finalPrice</span></h3>
 
         <label htmlFor='discount-code' className='block mt-4 text-lg'>
           Discount Code
