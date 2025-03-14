@@ -29,7 +29,7 @@ const Cart: React.FC = () => {
 
   const totalPrice = cartItems.reduce((total, item) => {
 
-    let selectedProduct = data.find((product) => product.id === item.id)
+    const selectedProduct = data.find((product) => product.id === item.id)
 
     return total + (selectedProduct?.price || 0) * item.qty
   }, 0)
