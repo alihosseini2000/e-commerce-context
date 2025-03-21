@@ -31,8 +31,8 @@ const ProductItem: React.FC<IProductItemProps> = ({ images, title, price, catego
         height={480}
         className="w-full h-auto object-cover rounded"
       />
-      <div className="mt-3">
-        <h3 className="text-lg font-semibold">{title}</h3>
+      <div className="mt-3 flex flex-col gap-3">
+        <h3 className="bold-18">{title}</h3>
         <p className="text-gray-800 bg-slate-400 rounded max-w-max px-4 py-2">{category.name}</p>
         <p className="text-gray-500">${price}</p>
       </div>

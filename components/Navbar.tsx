@@ -11,7 +11,7 @@ function Navbar() {
     const { cartTotalQty } = useShoppingCartContext()
     return (
         <nav className='py-4 shadow'>
-            <div className='container mx-auto'>
+            <div className='container'>
                 <ul className='flex gap-8'>
                     {
                         navLinks.map(item => (

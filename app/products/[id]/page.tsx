@@ -25,7 +25,7 @@ const ProductSinglePage: React.FC<IProductProps> = async ({ params }) => {
 
   if (product) {
     return (
-      <div className="container mx-auto p-6">
+      <div className="container max-container padding-container p-6">
         <div className="flex flex-col md:flex-row gap-6">
           <Image
             src={product.images[0]}
@@ -35,10 +35,10 @@ const ProductSinglePage: React.FC<IProductProps> = async ({ params }) => {
             className="w-full md:w-1/2 h-auto object-cover rounded"
           />
           <div className='flex flex-col gap-4'>
-            <h2 className="text-2xl font-bold">{product.title}</h2>
-            <p className="text-gray-600">{product.description}</p>
-            <p className="text-lg font-bold text-blue-600">${product.price}</p>
-            <p className="text-gray-800 bg-gray-400 px-4 py-2 rounded font-semibold max-w-max">{product.category.name}</p>
+            <h2 className="bold-20 sm:bold-24 md:bold-32">{product.title}</h2>
+            <p className="text-gray-600 regular-14 sm:regular-16">{product.description}</p>
+            <p className="bold-20 sm:bold-24 text-blue-600">${product.price}</p>
+            <p className="text-gray-800 bg-gray-400 px-4 py-2 rounded regular-14 sm:regular-16 max-w-max">{product.category.name}</p>
             <AddToCart id={Number(id)} />
           </div>
         </div>
@@ -46,7 +46,7 @@ const ProductSinglePage: React.FC<IProductProps> = async ({ params }) => {
     );
   } else {
     return (
-      <div className="container mx-auto">
+      <div className="container flexCenter">
         <h1 className="font-bold text-3xl text-red-700">Product Not Found</h1>
       </div>
     );

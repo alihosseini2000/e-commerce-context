@@ -46,8 +46,8 @@ const Cart: React.FC = () => {
   }
 
   return (
-    <div className='container mx-auto py-5'>
-      <h1 className='text-2xl font-bold mb-5'>Shopping Cart</h1>
+    <div className='container max-container padding-container py-5'>
+      <h1 className='xs:bold-24 bold-32 mb-5'>Shopping Cart</h1>
       <div>
         {cartItems.map(item => (
           <CartItem key={item.id}{...item} />
@@ -59,7 +59,7 @@ const Cart: React.FC = () => {
         <h3>Your Profit: <span>${formatNumberWithCommas(profit)}</span></h3>
         <h3>Final Price: <span>${formatNumberWithCommas(finalPrice)}</span></h3>
 
-        <label htmlFor='discount-code' className='block mt-4 text-lg'>
+        <label htmlFor='discount-code' className='block mt-4 regular-20'>
           Discount Code
         </label>
         <input
