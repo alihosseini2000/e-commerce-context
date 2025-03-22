@@ -21,7 +21,10 @@ const nextConfig: NextConfig = {
       'www.recetasnestle.com.pe',
       'tumercadoperu.com',
       'encrypted-tbn0.gstatic.com',
-      
+      'www.dydic.org.uk',
+      'www.xizikivybigi.cc',
+      'www.google.com',
+      'dummyimage.com',
     ]
   }
 };

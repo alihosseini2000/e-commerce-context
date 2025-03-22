@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ShoppingCartContextProvideer } from "@/context/ShopingCartContext";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,10 +16,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="dark:bg-gray-950 dark:text-white">
         <ShoppingCartContextProvideer>
           <Navbar />
           {children}
+          <Footer />
         </ShoppingCartContextProvideer>
       </body>
     </html>
