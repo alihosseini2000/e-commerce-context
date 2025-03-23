@@ -17,7 +17,7 @@ function Navbar() {
 
     return (
         <>
-            <nav className='py-4 shadow sticky top-0 bg-slate-100 dark:bg-slate-900 z-10'>
+            <nav className='py-1 md:py-4 w-full shadow sticky top-0 bg-slate-100 dark:bg-slate-900 z-10'>
                 <div className='container flexBetween gap-4'>
                     <Link href='/'>
                         <div className="flexCenter gap-2">

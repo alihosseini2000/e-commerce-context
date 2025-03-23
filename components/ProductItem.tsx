@@ -13,14 +13,14 @@ export interface IProductItemProps {
     name: string;
     slug: string;
     image: string;
-    createdAt: string;
+    creationAt: string;
     updatedAt: string;
   };
-  createdAt: string;
+  creationAt: string;
   updatedAt: string;
 }
 
-const ProductItem: React.FC<IProductItemProps> = ({ images, title, price, category }) => {
+const ProductItem: React.FC<IProductItemProps> = ({ images, title, price, category , creationAt }) => {
   return (
     <div className="border rounded-lg shadow-lg p-4 hover:shadow-xl transition transform hover:scale-105">
       <Image

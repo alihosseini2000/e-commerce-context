@@ -10,6 +10,8 @@ export default {
     extend: {
       screens: {
         xs: '400px',
+        md: '870',
+        lg: '1100',
         '3xl': '1680px',
         '4xl': '2200px',
       },

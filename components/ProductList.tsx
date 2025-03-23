@@ -5,6 +5,7 @@ import ProductItem, { IProductItemProps } from "./ProductItem";
 import Link from "next/link";
 import Loading from "@/app/Loading";
 import { useSearchParams } from "next/navigation";
+import SortingFiltering from "./SortingFiltering";
 
 const ProductList = () => {
 
@@ -16,6 +17,7 @@ const ProductList = () => {
 
     const [products, setProducts] = useState<IProductItemProps[]>([]);
     const [page, setPage] = useState(1);
+    const [sortType, setSortType] = useState<"date" | "price" | "">("")
     const [hasMore, setHasMore] = useState(true);
     const [loading, setLoading] = useState(false);
 
@@ -60,8 +62,15 @@ const ProductList = () => {
         return () => controller.abort();
     }, [page, search, category, maxPrice, minPrice]);
 
+    const sortedProducts = [...products].sort((a, b) => {
+        if (sortType === "price") return a.price - b.price;
+        if (sortType === "date") return new Date(b.creationAt).getTime() - new Date(a.creationAt).getTime();
+        return 0; // Default (no sorting)
+    });
+
     return (
-        <div className="container mx-auto my-6 px-4">
+        <div>
+            <SortingFiltering onSort={(type) => setSortType(type)} />
             <h1 className="text-2xl md:text-3xl font-bold mb-5">Products</h1>
 
             {loading ? (
@@ -69,8 +78,8 @@ const ProductList = () => {
             ) : (
                 <>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
-                        {products.length > 0 ? (
-                            products.map((product) => (
+                        {sortedProducts.length > 0 ? (
+                            sortedProducts.map((product) => (
                                 <Link key={product.id} href={`/products/${product.id}`} className="block">
                                     <ProductItem {...product} />
                                 </Link>

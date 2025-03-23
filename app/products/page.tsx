@@ -5,7 +5,7 @@ import React from 'react'
 
 function Products() {
   return (
-    <div className="my-6 container flexCenter flex-col">
+    <div className="container flexCenter flex-col">
       <Filter />
       <ProductList />
     </div>

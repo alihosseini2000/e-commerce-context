@@ -14,6 +14,7 @@ function Sidebar({ closeSidebar }: { closeSidebar: () => void }) {
       <ul className='flexCenter flex-col gap-4 text-lg'>
         <Link href={"/"} onClick={closeSidebar}><li>Home</li></Link>
         <Link href={"/products"} onClick={closeSidebar}><li>Products</li></Link>
+        <Link href={"/dashboard"} onClick={closeSidebar}><li>Dashboard</li></Link>
         <div>
           <span className='bg-red-700 text-white rounded-full p-2 me-1'>{cartTotalQty}</span>
           <Link href='/cart'>Cart</Link>

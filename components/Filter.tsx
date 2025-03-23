@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Search from "./Search";
 
-interface ICategory {
+export interface ICategory {
   id: number;
   name: string;
   slug: string;
@@ -25,14 +25,14 @@ const Filter = () => {
 
   useEffect(() => {
     fetchCategories()
-    .then((data) => {
-      setCategories(data);
-      setLoading(false); 
-    })
-    .catch((error) => {
-      console.error(error);
-      setLoading(false);
-    });
+      .then((data) => {
+        setCategories(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoading(false);
+      });
   }, []);
 
   if (loading) {
@@ -40,7 +40,7 @@ const Filter = () => {
   }
 
   return (
-    <div className="container flex-col gap-3 mb-5 hidden sm:flex">
+    <div className="container flex-col gap-3 mb-5 hidden lg:flex">
       <Search />
       <div className="flexCenter gap-4">
         {categories.map((category: ICategory) => {
