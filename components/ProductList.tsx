@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProductItem, { IProductItemProps } from "./ProductItem";
 import Link from "next/link";
-import Loading from "@/app/Loading";
+import Loading from "@/app/loading";
 import { useSearchParams } from "next/navigation";
 import SortingFiltering from "./SortingFiltering";
 
@@ -77,7 +77,7 @@ const ProductList = () => {
                 <Loading />
             ) : (
                 <>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8">
                         {sortedProducts.length > 0 ? (
                             sortedProducts.map((product) => (
                                 <Link key={product.id} href={`/products/${product.id}`} className="block">
@@ -89,7 +89,7 @@ const ProductList = () => {
                         )}
                     </div>
 
-                    <div className="flex justify-center items-center gap-4 mt-5">
+                    <div className="flex justify-center items-center gap-4 mt-8">
                         <button
                             onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
                             disabled={page === 1}

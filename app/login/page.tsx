@@ -44,7 +44,7 @@ function Login() {
                 className='focus:outline-orange-600 w-full md:w-auto p-2 rounded-lg border border-orange-400'
                 type="email"
                 name="email"
-                placeholder="email"
+                placeholder="john@mail.com"
                 required />
             <input
                 onChange={handleLogin}
@@ -52,7 +52,7 @@ function Login() {
                 className='focus:outline-orange-600 w-full md:w-auto p-2 rounded-lg border border-orange-400'
                 type="password"
                 name="password"
-                placeholder="password"
+                placeholder="changeme"
                 required />
             <button
                 onClick={handleSubmit}

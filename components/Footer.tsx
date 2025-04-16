@@ -2,7 +2,9 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div>Footer</div>
+    <p className='text-center py-8'>
+      © 2024 Your Company, Inc. All rights reserved.
+    </p>
   )
 }
 

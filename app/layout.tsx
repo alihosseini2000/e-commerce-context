@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="dark:bg-gray-950 dark:text-white">
+    <html className="h-full" lang="en">
+      <body className="dark:bg-gray-950 dark:text-white h-full">
         <ShoppingCartContextProvideer>
           <Navbar />
           {children}

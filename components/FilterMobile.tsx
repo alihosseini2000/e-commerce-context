@@ -1,9 +1,8 @@
 'use client';
 
-import Loading from "@/app/Loading";
 import { fetchCategories } from "@/lib/api";
 import Link from "next/link";
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Search from "./Search";
 import { ICategory } from "./Filter";
@@ -16,21 +15,17 @@ const FilterMobile: React.FC<FilterMobileProps> = ({ onApply }) => {
     const [categories, setCategories] = useState<ICategory[]>([]);
     const [minPrice, setMinPrice] = useState("");
     const [maxPrice, setMaxPrice] = useState("");
-    const [loading, setLoading] = useState<boolean>(false);
     const router = useRouter();
     const searchParams = useSearchParams();
 
     useEffect(() => {
         if (!onApply || categories.length > 0) return; // Lazy load categories
-        setLoading(true);
         fetchCategories()
             .then((data) => {
                 setCategories(data);
-                setLoading(false);
             })
             .catch((error) => {
                 console.error(error);
-                setLoading(false);
             });
     }, [onApply, categories.length]);
 
@@ -43,12 +38,10 @@ const FilterMobile: React.FC<FilterMobileProps> = ({ onApply }) => {
         }
     }, [minPrice, maxPrice, searchParams, router]);
 
-    if (loading) return <Loading />;
-
     return (
         <div
-            className={`${onApply ? "flex animate-slide-down opacity-100" : "hidden opacity-0"
-                } absolute left-0 right-0 top-12 bg-gray-200 dark:bg-gray-900 border-t border-slate-600 z-20 py-6 flex-col gap-3 shadow-lg transition-opacity`}
+            className={`${onApply ? "flex animate-slide-down opacity-95 mt-1" : "hidden opacity-0"
+                } absolute left-0 right-0 top-36 bg-gray-200 dark:bg-gray-900 border-t border-slate-600 z-20 py-6 flex-col gap-3 shadow-lg transition-opacity`}
         >
             <Search />
 
@@ -67,8 +60,8 @@ const FilterMobile: React.FC<FilterMobileProps> = ({ onApply }) => {
 
             {/* Price Filters */}
             <div className="flex flex-col gap-3 px-4">
-                <div className="flex flex-col border-2 border-orange-600 rounded-md p-2">
-                    <label htmlFor="min_price" className="mb-1 text-sm">Min Price</label>
+                <div className="flexCenter flex-col border-2 border-orange-600 rounded-md p-2">
+                    <label htmlFor="min_price" className="mb-1 regular-16">Min Price</label>
                     <input
                         onChange={(e) => setMinPrice(e.target.value)}
                         value={minPrice}
@@ -79,8 +72,8 @@ const FilterMobile: React.FC<FilterMobileProps> = ({ onApply }) => {
                         className="text-center p-2 bg-transparent focus:outline-none"
                     />
                 </div>
-                <div className="flex flex-col border-2 border-orange-600 rounded-md p-2">
-                    <label htmlFor="max_price" className="mb-1 text-sm">Max Price</label>
+                <div className="flexCenter flex-col border-2 border-orange-600 rounded-md p-2">
+                    <label htmlFor="max_price" className="mb-1 regular-16">Max Price</label>
                     <input
                         onChange={(e) => setMaxPrice(e.target.value)}
                         value={maxPrice}

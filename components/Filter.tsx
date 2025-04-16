@@ -1,5 +1,4 @@
 "use client"
-import Loading from "@/app/Loading";
 import { fetchCategories } from "@/lib/api";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -19,7 +18,6 @@ const Filter = () => {
   const [categories, setCategories] = useState<ICategory[]>([]);
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-  const [loading, setLoading] = useState(true);
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -27,22 +25,16 @@ const Filter = () => {
     fetchCategories()
       .then((data) => {
         setCategories(data);
-        setLoading(false);
       })
       .catch((error) => {
         console.error(error);
-        setLoading(false);
       });
   }, []);
 
-  if (loading) {
-    return <Loading />;
-  }
-
   return (
-    <div className="container flex-col gap-3 mb-5 hidden lg:flex">
+    <div className="container flex-col gap-3 my-5 hidden lg:flex">
       <Search />
-      <div className="flexCenter gap-4">
+      <div className="flexCenter flex-wrap gap-4">
         {categories.map((category: ICategory) => {
           return (
             <Link key={category.id} href={`/products?category=${category.id}`} className="px-3 py-1 bg-orange-700 text-white rounded-md">
