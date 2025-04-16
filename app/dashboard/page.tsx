@@ -42,28 +42,28 @@ function Dashboard() {
       <div className='grid grid-cols-3 gap-4'>
         <input
           onChange={handleChangeProduct}
-          className='focus:outline-orange-600 p-2 rounded-lg border border-orange-400'
+          className='bg-gray-900 focus:outline-orange-600 p-2 rounded-lg border border-orange-400'
           type="text"
           name="title"
           id="title"
           placeholder="title" />
         <input
           onChange={handleChangeProduct}
-          className='focus:outline-orange-600 p-2 rounded-lg border border-orange-400'
+          className='bg-gray-900 focus:outline-orange-600 p-2 rounded-lg border border-orange-400'
           type="text"
           name="price"
           id="price"
           placeholder="price" />
            <input
           onChange={handleChangeProduct}
-          className='focus:outline-orange-600 p-2 rounded-lg border border-orange-400'
+          className='bg-gray-900 focus:outline-orange-600 p-2 rounded-lg border border-orange-400'
           type="number"
           name="categoryId"
           id="categoryId"
           placeholder="categoryId" />
         <input
           onChange={handleChangeProduct}
-          className='focus:outline-orange-600 p-2 rounded-lg border border-orange-400'
+          className='bg-gray-900 focus:outline-orange-600 p-2 rounded-lg border border-orange-400'
           type="text"
           name="image"
           id="image"
@@ -71,7 +71,7 @@ function Dashboard() {
       </div>
       <textarea
         onChange={handleChangeProduct}
-        className='focus:outline-orange-600 p-2 rounded-lg border border-orange-400'
+        className='bg-gray-900 focus:outline-orange-600 p-2 rounded-lg border border-orange-400'
         name="description"
         id="description"
         placeholder='description'></textarea>

@@ -41,7 +41,7 @@ function Login() {
             <input
                 onChange={handleLogin}
                 value={user.email}
-                className='focus:outline-orange-600 w-full md:w-auto p-2 rounded-lg border border-orange-400'
+                className='focus:outline-orange-600 w-full md:w-auto p-2 bg-gray-900 rounded-lg border border-orange-400'
                 type="email"
                 name="email"
                 placeholder="john@mail.com"
@@ -49,7 +49,7 @@ function Login() {
             <input
                 onChange={handleLogin}
                 value={user.password}
-                className='focus:outline-orange-600 w-full md:w-auto p-2 rounded-lg border border-orange-400'
+                className='focus:outline-orange-600 w-full md:w-auto p-2 bg-gray-900 rounded-lg border border-orange-400'
                 type="password"
                 name="password"
                 placeholder="changeme"
