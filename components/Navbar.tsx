@@ -25,7 +25,7 @@ function Navbar() {
                             <h1>ECommerce</h1>
                         </div>
                     </Link>
-                    <ul className='hidden lg:flexCenter gap-8'>
+                    <ul className='lg:flexCenter hidden gap-8'>
                         {navLinks.map(item => (
                             <li key={item.href} className={`${pathName === item.href ? "text-orange-600" : ""}`}>
                                 <Link href={item.href}>{item.title}</Link>
