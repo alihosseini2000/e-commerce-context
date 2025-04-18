@@ -15,7 +15,7 @@ const SortingFiltering: React.FC<SortingFilteringProps> = ({ onSort }) => {
   const toggleFilter = useCallback(() => setShowFilter((prev) => !prev), []);
 
   return (
-    <div className="flex lg:hidden mb-4">
+    <div className="flex mb-4">
       {/* Sort Button */}
       <SortButton onSort={onSort} />
 

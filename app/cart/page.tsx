@@ -69,7 +69,7 @@ const Cart: React.FC = () => {
           value={discountCode}
           onChange={handleDiscountChange}
           placeholder='Enter discount code "OFF10"'
-          className='mt-2 me-2 p-2 border border-gray-300 rounded'
+          className='mt-2 me-2 p-2 dark:bg-gray-900 border border-gray-300 rounded'
         />
         <button onClick={handleSubmitDiscount} className='mt-3 px-4 py-2 rounded bg-blue-500 text-white'>
           Apply Discount
